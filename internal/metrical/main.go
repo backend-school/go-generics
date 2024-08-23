@@ -15,10 +15,12 @@ func AddString(a,b int8) int8 {
 // 	return a + b
 // }
 
+// Metrical interface to allow ops in a metrical space
 type Metrical interface {
 	constraints.Integer | constraints.Float | constraints.Complex
 }
 
+// Ok, T is constrained to metrical spaces
 func Add[T Metrical] (a,b T) T {
 	return a + b
 }
